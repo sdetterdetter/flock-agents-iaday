@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flock-agents-iaday"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = ["langgraph==1.2.14", "langgraph-checkpoint-sqlite", "mcp==1.30.0", "jsonschema>=4.20", "langchain-google-genai==4.4.0", "colorama==0.4.6"]
+
+[tool.setuptools.packages.find]
+include = ["flock_app*"]

@@ -1,0 +1,117 @@
+{
+  "command": "prospectar ypf 2 contactos",
+  "snapshot_date": "2026-10-09",
+  "status": "pending_evidence",
+  "requested_contacts": 2,
+  "errors": [
+    "apollo_capture_incomplete: ValueError"
+  ],
+  "metrics": {
+    "model_calls": 1,
+    "paid_enrichment": 2,
+    "crm_writes": 0,
+    "input_tokens": 1244,
+    "output_tokens": 121,
+    "thought_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 1365
+  },
+  "enrichment_status": "results_captured",
+  "operationally_complete": false,
+  "pending_execution_controls": [
+    "canonical_ic_save_and_readback",
+    "contactability",
+    "master_data_and_owner",
+    "enrichment_if_authorized"
+  ],
+  "example_metadata": {
+    "source": "actual_local_run",
+    "anonymized": true,
+    "removed": "names, emails, personal URLs, provider IDs, local paths, organization payloads and employment history",
+    "note_es": "Ejemplo real anonimizado. Captura parcial; dos perfiles enriquecidos no equivalen a dos contactos finales validados."
+  },
+  "selected_contacts": [],
+  "preliminary_contacts": [
+    {
+      "title": "Commercial Manager of Mining, Infrastructure & Construction Business Unit",
+      "rough_rank": "B",
+      "preliminary_priority": "HOLD",
+      "final_priority": null,
+      "history_gate": "HOLD_HISTORY_UNRESOLVED",
+      "pending_controls": [
+        "buyer_function_or_scope_unresolved",
+        "employment_not_supported",
+        "reachable_scope_not_supported",
+        "functional_scope_not_supported",
+        "public_identity_not_supported",
+        "segment_unresolved",
+        "history_gate_HOLD_HISTORY_UNRESOLVED",
+        "account_gate_HOLD",
+        "population_coverage_incomplete"
+      ],
+      "reason_codes": [
+        "ambiguous_scope_requires_validation",
+        "history_coverage_missing"
+      ],
+      "contact_id": "example-contact-1",
+      "name": "Contacto 1"
+    },
+    {
+      "title": "Gerente Compras Produccion Y Exploracion Central",
+      "rough_rank": "B",
+      "preliminary_priority": "HOLD",
+      "final_priority": null,
+      "history_gate": "HOLD_HISTORY_UNRESOLVED",
+      "pending_controls": [
+        "buyer_function_or_scope_unresolved",
+        "employment_not_supported",
+        "reachable_scope_not_supported",
+        "functional_scope_not_supported",
+        "public_identity_not_supported",
+        "segment_unresolved",
+        "history_gate_HOLD_HISTORY_UNRESOLVED",
+        "account_gate_HOLD",
+        "population_coverage_incomplete"
+      ],
+      "reason_codes": [
+        "ambiguous_scope_requires_validation",
+        "history_coverage_missing"
+      ],
+      "contact_id": "example-contact-2",
+      "name": "Contacto 2"
+    }
+  ],
+  "enriched_contacts": [
+    {
+      "contact": {
+        "contact_id": "example-contact-1",
+        "name": "Contacto 1"
+      },
+      "status": "captured",
+      "data": {
+        "person": {
+          "title": "Commercial Manager of Mining, Infrastructure & Construction Business Unit",
+          "country": "Argentina",
+          "email_status": "verified"
+        },
+        "email_redacted": true
+      }
+    },
+    {
+      "contact": {
+        "contact_id": "example-contact-2",
+        "name": "Contacto 2"
+      },
+      "status": "captured",
+      "data": {
+        "person": {
+          "title": "Gerente Compras Produccion Y Exploracion Central",
+          "country": "Argentina",
+          "email_status": "verified"
+        },
+        "email_redacted": true
+      }
+    }
+  ],
+  "report_es": "Prospección YPF: 2 candidatos preliminares y 2 perfiles enriquecidos; 0 contactos finales validados. Estado pending_evidence; captura parcial. Gemini: 1.365 tokens. Sin escrituras CRM."
+}
