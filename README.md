@@ -67,33 +67,4 @@ El enriquecimiento estándar aprobado comprende perfil y email corporativo, con 
 
 No versionar `.env`, `.local/`, OAuth, bases privadas, fuentes canónicas, capturas, datos de contactos ni ZIP de instalación con conocimiento interno.
 
-## Evidencia y estado de la entrega
-
-Piloto local del 9 de octubre de 2026:
-
-- Captura Apollo: 28 páginas, 2.751 filas y 2.750 IDs únicos; cobertura parcial documentada.
-- Research: una llamada Gemini, 1.033 tokens de entrada y 252 de salida; **1.285 tokens totales**.
-- Enriquecimiento aprobado: cuatro perfiles y tres emails marcados `verified` por Apollo. El proveedor no informó el débito efectivo de créditos.
-- Cuatro pruebas sintéticas verificaron aislamiento del payload, caché, aprobación/reanudación y conflictos de identidad sin consumir API real.
-- Sin escrituras CRM ni compras de teléfono.
-
-**El flujo local fue ejecutado; la calificación comercial completa sigue pendiente.** La búsqueda pública del piloto devolvió páginas generales y no validó los perfiles de LinkedIn. HubSpot está diferido, por lo que historial/reentrada y otros controles comerciales no están completos. Una shortlist A/B/C/X o un perfil enriquecido no equivale a una selección final P1/P2. El sistema conserva esos bloqueos y puede terminar con `pending_evidence` en lugar de declarar éxito completo.
-
-## Relación con las charlas de Flock AI Day 2026
-
-Material revisado: *De usar agentes a construirlos* (Francisco Sempé) y *Flock AI Day 2026 — V2* (Federico Vazquez), del 9/10/2026. Son referencias conceptuales y de challenge; no se identificó una rúbrica formal de puntajes en el texto recuperado.
-
-| Concepto de las charlas | Aplicación y estado en este proyecto |
-|---|---|
-| LangGraph: estado, nodos y transiciones | Grafo explícito de 13 nodos, estado compartido y pausa/reanudación con SQLite |
-| MCP para conectar sistemas | Apollo MCP autorizado localmente; HubSpot diferido |
-| El prompt orienta, las herramientas validan y el flujo impone controles | Gemini extrae hechos; código valida evidencia/identidad y bloquea compras sin aprobación |
-| Especialistas por API con contexto propio | Research realiza una llamada Gemini; Discovery y Audit son componentes deterministas, no especialistas LLM independientes |
-| RAG con fuentes y recuperación pertinente | Índice privado FTS5 por palabras; no implementa embeddings ni generación aumentada con ese índice. Los documentos internos no se envían a Gemini gratuito |
-| Keys en variables de entorno | Clave Google local; credenciales y datos excluidos de la entrega GitHub |
-| Challenge: spec, instrucciones, conector y publicación | Conector implementado y README preparado. Falta documentar una spec e instrucciones versionables, comprobar entrega reproducible del código y publicar una URL segura |
-
-El entregable actual se presenta como **workflow de prospección con IA y componentes especializados**, sin afirmar que todos los nodos son agentes LLM. La publicación web y la ampliación a varios especialistas por API no se hicieron en esta etapa. No se agregan herramientas ni se cambia la arquitectura solo para reproducir ejemplos de las charlas.
-
-La automatización general de instalación se mantiene pendiente hasta validar el sistema completo.
 
